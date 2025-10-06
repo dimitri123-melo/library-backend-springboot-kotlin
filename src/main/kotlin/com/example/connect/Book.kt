@@ -1,6 +1,7 @@
 package com.example.connect
 
 import jakarta.persistence.*
+import java.time.LocalDateTime
 
 
 @Entity
@@ -12,7 +13,9 @@ data class Book(
     var name: String = "",
     var author: String = "",
 
-//    @Lob
-//    @Column(name = "profile_image", columnDefinition = "LONGBLOB")
-//    var image: ByteArray? = null
+    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    var image: ByteArray? = null,
+
+//    var createdAt: LocalDateTime = LocalDateTime.now()
 )
